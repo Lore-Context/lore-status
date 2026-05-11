@@ -1,0 +1,87 @@
+# Upptime configuration for Lore Context status page
+# Repo: Lore-Context/lore-status
+# Deployed to: status.lorecontext.com via Cloudflare CNAME -> GitHub Pages
+# OPERATOR GATE: creating the GitHub repo and Cloudflare DNS CNAME require explicit operator authorization before applying.
+
+owner: Lore-Context
+repo: lore-status
+
+# Public status page title and branding
+status-website:
+  cname: status.lorecontext.com
+  name: Lore Context Status
+  logoUrl: https://lorecontext.com/logo.png
+  introTitle: Lore Context Service Status
+  introMessage: Real-time status and uptime history for all Lore Context services.
+  navbar:
+    - title: Lore Context
+      href: https://lorecontext.com
+    - title: Docs
+      href: https://docs.lorecontext.com
+    - title: Dashboard
+      href: https://app.lorecontext.com
+
+# Monitored endpoints (public-facing only; internal-only endpoints excluded from public page)
+sites:
+  - name: API
+    url: https://api.lorecontext.com/health
+    method: GET
+    expectedStatusCodes:
+      - 200
+    icons: 🔌
+
+  - name: Dashboard
+    url: https://app.lorecontext.com
+    method: GET
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+    icons: 🖥️
+
+  - name: Marketing Site
+    url: https://lorecontext.com
+    method: GET
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+    icons: 🌐
+
+  - name: MCP Server
+    url: https://mcp.lorecontext.com
+    method: GET
+    expectedStatusCodes:
+      - 200
+      - 404
+    icons: 🤖
+
+  # Internal-only — monitored but NOT shown on public status page
+  - name: Qdrant (internal)
+    url: https://qdrant.internal/healthz
+    method: GET
+    expectedStatusCodes:
+      - 200
+    hide: true
+    icons: 🔒
+
+# Notification channels (operator fills in actual secrets via GitHub repo secrets)
+notifications:
+  - type: slack
+    channel: lore-prod-ops-alerts
+  - type: email
+    to: ops@lorecontext.com
+
+# GitHub Actions schedule: check every 5 minutes
+schedule:
+  - cron: "*/5 * * * *"
+
+# Commit history for incident timeline
+commitMessages:
+  statusChange: "🟨 {{name}} is {{status}} (was {{previousStatus}})"
+  incidentCreate: "🔴 Incident: {{name}} is down"
+  incidentResolve: "✅ Resolved: {{name}} is back up"
+
+# Incident auto-close after 24h with no recurrence
+assignees:
+  - lore-oncall
