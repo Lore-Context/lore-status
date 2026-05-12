@@ -59,18 +59,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/mcp.lorecontext.com.ico",
     "slug": "mcp-server",
     "status": "degraded",
-    "uptime": "41.57%",
-    "uptimeDay": "41.57%",
-    "uptimeWeek": "41.57%",
-    "uptimeMonth": "41.57%",
-    "uptimeYear": "41.57%",
+    "uptime": "37.06%",
+    "uptimeDay": "37.06%",
+    "uptimeWeek": "37.06%",
+    "uptimeMonth": "37.06%",
+    "uptimeYear": "37.06%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-05-12": 0
+      "2026-05-12": 1
     }
   },
   {
@@ -79,16 +79,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/qdrant.internal.ico",
     "slug": "qdrant-internal",
     "status": "degraded",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "59.55%",
+    "uptimeDay": "59.55%",
+    "uptimeWeek": "59.55%",
+    "uptimeMonth": "59.55%",
+    "uptimeYear": "59.55%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-05-12": 0
+    }
   }
 ]
