@@ -1,6 +1,6 @@
 # Lore Context — Production Status
 
-[![Uptime CI](https://github.com/Lore-Context/lore-status/workflows/Uptime%20CI/badge.svg)](https://github.com/Lore-Context/lore-status/actions?query=workflow%3A%22Uptime+CI%22)
+[![Uptime CI](https://github.com/Lore-Context/lore-status/workflows/Uptime%20CI/badge.svg)](https://github.com/Lore-Context/lore-status/actions/workflows/uptime.yml)
 
 Live at: **https://status.lorecontext.com**
 
