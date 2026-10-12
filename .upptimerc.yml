@@ -11,34 +11,14 @@ status-website:
   cname: status.lorecontext.com
   name: Lore Context Status
   logoUrl: https://lorecontext.com/logo.png
-  introTitle: Lore Context Service Status
-  introMessage: Real-time status and uptime history for all Lore Context services.
+  introTitle: Lore Context Website Status
+  introMessage: The hosted API, dashboard, and MCP service are retired. This page monitors the static marketing site only.
   navbar:
     - title: Lore Context
       href: https://lorecontext.com
-    - title: Docs
-      href: https://docs.lorecontext.com
-    - title: Dashboard
-      href: https://app.lorecontext.com
 
-# Monitored endpoints (public-facing only; internal-only endpoints excluded from public page)
+# The API, app, and MCP hostnames are offline. Do not probe them from this monitor.
 sites:
-  - name: API
-    url: https://api.lorecontext.com/health
-    method: GET
-    expectedStatusCodes:
-      - 200
-    icons: 🔌
-
-  - name: Dashboard
-    url: https://app.lorecontext.com
-    method: GET
-    expectedStatusCodes:
-      - 200
-      - 301
-      - 302
-    icons: 🖥️
-
   - name: Marketing Site
     url: https://lorecontext.com
     method: GET
@@ -47,23 +27,6 @@ sites:
       - 301
       - 302
     icons: 🌐
-
-  - name: MCP Server
-    url: https://mcp.lorecontext.com
-    method: GET
-    expectedStatusCodes:
-      - 200
-      - 404
-    icons: 🤖
-
-  # Internal-only — monitored but NOT shown on public status page
-  - name: Qdrant (internal)
-    url: https://qdrant.internal/healthz
-    method: GET
-    expectedStatusCodes:
-      - 200
-    hide: true
-    icons: 🔒
 
 # Notification channels (operator fills in actual secrets via GitHub repo secrets)
 notifications:
